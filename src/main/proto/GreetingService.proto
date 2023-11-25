@@ -1,0 +1,16 @@
+syntax = "proto3";
+package com.andersen.grpc;
+
+message HelloRequest {
+  string firstName = 1;
+  string secondName = 2;
+  repeated string hobbies = 3;
+}
+
+message HelloResponse {
+  string greeting = 1;
+}
+
+service GreetingService {
+  rpc greeting(HelloRequest) returns (HelloResponse);
+}
